@@ -4,11 +4,11 @@ import connectDB from "./config/db.js";
 
 const app = express();
 
+connectDB();
+
 // Middleware
 app.use(cors());
 app.use(express.json());   
-
-connectDB();
 
 // default route
 app.get("/", (req, res) => {
