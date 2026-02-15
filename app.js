@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
+import connectDB from "./config/db.js";
 
 const app = express();
 
@@ -8,9 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());   
 
+connectDB();
+
 // default route
 app.get("/", (req, res) => {
-  res.send("Welcome to the Task Tracker API.....3434343.");
+  res.send("Welcome to the Task Tracker API.");
 });
 
 export default app;
